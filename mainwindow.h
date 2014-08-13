@@ -5,7 +5,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <qtreewidget.h>
-
+#include <qlistwidget.h>
 namespace Ui {
 class MainWindow;
 }
@@ -18,6 +18,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
    QTreeWidgetItem* item;
+    QListWidgetItem * l;
    QTreeWidgetItem* addFolder(QString name);
    void addFile(QTreeWidgetItem * parent, QString name);
 private:

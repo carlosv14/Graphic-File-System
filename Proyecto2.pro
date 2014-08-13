@@ -24,3 +24,6 @@ HEADERS  += mainwindow.h \
     Nodo.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    Resources.qrc
