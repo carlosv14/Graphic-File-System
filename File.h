@@ -3,10 +3,11 @@
 #include <iostream>
 using namespace std;
 #include<QString>
+#include <TipoArchivo.h>
 
-class File{
+class File : public TipoArchivo{
 public:
-      QString nom;
+      QString extension;
       File(QString nom);
 
       virtual ~File();

@@ -6,14 +6,15 @@
 using namespace std;
 #include<QString>
 #include "mainwindow.h"
-class Folder{
+#include <TipoArchivo.h>
+class Folder : public TipoArchivo{
 public:
        Folder(QString nom);
        virtual ~Folder();
-       QString nom;
-       Lista<File *>* f;
-      void Imprimir();
-       void Agregar(QString nom);
+       Lista<TipoArchivo*>* f;
+         void Imprimir();
+       void AgregarFile(QString nom);
+         Folder* AgregarFolder(QString nom);
    protected:
    private:
 

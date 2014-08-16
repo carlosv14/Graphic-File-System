@@ -3,6 +3,7 @@
 #include "File.h"
 #include "Folder.h"
 #include "Lista.h"
+#include "TipoArchivo.h"
 #include <QDebug>
 #include <qtreewidget.h>
 Folder * RegistrarFolder(Lista<Folder *>* folder, QString nom){
@@ -27,21 +28,13 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
     Lista <Folder*>* e = new Lista <Folder*>();
-    Folder *f =RegistrarFolder(e,"Este Equipo");
-    f->Agregar("primerArchivo");
-     f->Agregar("segundoArchivo");
-      f->Agregar("tercerArchivo");
-   w.item->setText(0,f->nom);
-   w.addFolder("Descargas");
-   QTreeWidgetItem* p=  w.addFolder("Documentos");
-      w.addFolder("Escritorio");
-         w.addFolder("Imagenes");
-            w.addFolder("Musica");
-              w.addFolder("Videos");
-              w.addFolder("Disco Local C:");
-
-    w.addFile(p,"hola_mundo");
-    Imprimir(e);
+    Folder *f = new Folder("Este Equipo");
+    e->inserta(f);
+    w.item->setText(0,f->nom);
+    f->AgregarFolder("primer folder");
+    f->AgregarFile("holis");
+    w.addFolder(f->f->inicio->valor->nom);
+   Imprimir(e);
  //  QTreeWidgetItem* parent = w.addFolder("");
   // w.addFile(parent,"que tal");
     return a.exec();

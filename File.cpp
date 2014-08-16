@@ -5,7 +5,7 @@ using namespace std;
 #include<QtDebug>
 File::File(QString nom){
     this->nom= nom;
-
+    this->tipo ="A";
 }
 
 File::~File(){

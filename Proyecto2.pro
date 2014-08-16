@@ -15,15 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     File.cpp \
-    Folder.cpp
+    Folder.cpp \
+    TipoArchivo.cpp
 
 HEADERS  += mainwindow.h \
     File.h \
     Folder.h \
     Lista.h \
-    Nodo.h
+    Nodo.h \
+    TipoArchivo.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui
 
 RESOURCES += \
     Resources.qrc
