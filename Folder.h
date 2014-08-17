@@ -5,16 +5,16 @@
 #include "File.h"
 using namespace std;
 #include<QString>
-#include "mainwindow.h"
 #include <TipoArchivo.h>
 class Folder : public TipoArchivo{
 public:
-       Folder(QString nom);
+       Folder(QString nom,QString path);
        virtual ~Folder();
        Lista<TipoArchivo*>* f;
          void Imprimir();
        void AgregarFile(QString nom);
-         Folder* AgregarFolder(QString nom);
+         Folder* AgregarFolder(QString nom,QString path);
+        Folder *buscarFolder(QString nom);
    protected:
    private:
 

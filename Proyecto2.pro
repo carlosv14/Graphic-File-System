@@ -16,14 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     File.cpp \
     Folder.cpp \
-    TipoArchivo.cpp
+    TipoArchivo.cpp \
+    dialog.cpp
 
 HEADERS  += mainwindow.h \
     File.h \
     Folder.h \
     Lista.h \
     Nodo.h \
-    TipoArchivo.h
+    TipoArchivo.h \
+    dialog.h
 
 FORMS    += mainwindow.ui \
     dialog.ui
