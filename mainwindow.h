@@ -8,6 +8,7 @@
 #include <qlistwidget.h>
 #include "Folder.h"
 #include "Lista.h"
+#include <QList>
 namespace Ui {
 class MainWindow;
 }
@@ -21,9 +22,10 @@ public:
     ~MainWindow();
    QTreeWidgetItem* item;
     QListWidgetItem * l;
-        Folder* f;
-          Folder*busc;
-        Lista <Folder*>* e;
+        TipoArchivo* f;
+        Lista <TipoArchivo*>* e;
+        Lista<Lista<TipoArchivo*>*>*back;
+         QList<Lista<TipoArchivo*>*>forw;
     QListWidgetItem* addFol(QString name);
     QTreeWidgetItem * re ;
    void addFil(QListWidgetItem* parent, QString name);
@@ -39,6 +41,18 @@ private slots:
 
 
   void on_actionNuevo_Archivo_triggered();
+
+  void on_listWidget_2_itemDoubleClicked(QListWidgetItem *item);
+
+  void on_listWidget_2_doubleClicked(const QModelIndex &index);
+
+  void on_treeWidget_doubleClicked(const QModelIndex &index);
+
+  void on_treeWidget_itemDoubleClicked(QTreeWidgetItem *item, int column);
+
+  void on_treeWidget_clicked(const QModelIndex &index);
+
+  void on_commandLinkButton_clicked();
 
 private:
     Ui::MainWindow *ui;

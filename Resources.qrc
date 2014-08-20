@@ -4,5 +4,6 @@
         <file>folder.png</file>
         <file>document.png</file>
         <file>desktop.png</file>
+        <file>back.png</file>
     </qresource>
 </RCC>

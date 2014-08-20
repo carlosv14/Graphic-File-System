@@ -6,6 +6,8 @@
 using namespace std;
 #include<QString>
 #include <TipoArchivo.h>
+
+
 class Folder : public TipoArchivo{
 public:
        Folder(QString nom,QString path);
@@ -20,5 +22,6 @@ public:
 
 
 };
+
 
 #endif // FOLDER_H

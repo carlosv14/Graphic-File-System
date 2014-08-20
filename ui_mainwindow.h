@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -42,6 +43,7 @@ public:
     QListWidget *listWidget_2;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
+    QCommandLinkButton *commandLinkButton;
     QMenuBar *menuBar;
     QMenu *menuInicio;
     QToolBar *mainToolBar;
@@ -92,6 +94,13 @@ public:
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(100, 10, 441, 20));
+        commandLinkButton = new QCommandLinkButton(centralWidget);
+        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
+        commandLinkButton->setGeometry(QRect(30, -10, 51, 51));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/back.png"), QSize(), QIcon::Normal, QIcon::Off);
+        commandLinkButton->setIcon(icon1);
+        commandLinkButton->setIconSize(QSize(35, 35));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -124,6 +133,7 @@ public:
         actionNueva_Carpeta->setText(QApplication::translate("MainWindow", "Nueva Carpeta", 0));
         actionNuevo_Archivo->setText(QApplication::translate("MainWindow", "Nuevo Archivo", 0));
         pushButton->setText(QString());
+        commandLinkButton->setText(QString());
         menuInicio->setTitle(QApplication::translate("MainWindow", "Inicio", 0));
     } // retranslateUi
 

@@ -2,6 +2,7 @@
 #define LISTA_H
 #include "Nodo.h"
 #include <QString>
+#include "TipoArchivo.h"
 using namespace std;
 
 template <class T>
@@ -16,6 +17,8 @@ class Lista
         virtual ~Lista();
         void inserta(int posicion, T valor);
         void inserta(T valor);
+        T buscar(int pos);
+        T recupera(Nodo<T>* posicion);
         Nodo<T>* siguiente(Nodo<T>* posicion);
         Nodo<T>* anterior(Nodo<T>* posicion);
         Nodo<T>* primero();
@@ -39,16 +42,20 @@ Lista<T>::~Lista()
     //dtor
 }
 
-
-
-
-
+template<class T>
+T Lista<T>::buscar(int pos){
+    if(pos<0 || pos>=this->size)
+        return NULL;
+    Nodo<T>*tmp = inicio;
+    for(int i=0; i<pos;i++)
+            tmp = tmp->siguiente;
+    return tmp->valor;
+}
 
 template<class T>
 void Lista<T>::inserta(T valor){
     inserta(this->size, valor);
 }
-
 
 
 template<class T>
