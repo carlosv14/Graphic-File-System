@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[17];
-    char stringdata[353];
+    QByteArrayData data[16];
+    char stringdata[330];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,26 +38,25 @@ QT_MOC_LITERAL(5, 60, 6),
 QT_MOC_LITERAL(6, 67, 21),
 QT_MOC_LITERAL(7, 89, 32),
 QT_MOC_LITERAL(8, 122, 32),
-QT_MOC_LITERAL(9, 155, 33),
-QT_MOC_LITERAL(10, 189, 16),
-QT_MOC_LITERAL(11, 206, 29),
-QT_MOC_LITERAL(12, 236, 5),
-QT_MOC_LITERAL(13, 242, 27),
-QT_MOC_LITERAL(14, 270, 31),
-QT_MOC_LITERAL(15, 302, 21),
-QT_MOC_LITERAL(16, 324, 28)
+QT_MOC_LITERAL(9, 155, 27),
+QT_MOC_LITERAL(10, 183, 5),
+QT_MOC_LITERAL(11, 189, 31),
+QT_MOC_LITERAL(12, 221, 21),
+QT_MOC_LITERAL(13, 243, 28),
+QT_MOC_LITERAL(14, 272, 29),
+QT_MOC_LITERAL(15, 302, 27)
     },
     "MainWindow\0on_treeWidget_itemClicked\0"
     "\0QTreeWidgetItem*\0item\0column\0"
     "on_pushButton_clicked\0"
     "on_actionNueva_Carpeta_triggered\0"
     "on_actionNuevo_Archivo_triggered\0"
-    "on_listWidget_2_itemDoubleClicked\0"
-    "QListWidgetItem*\0on_listWidget_2_doubleClicked\0"
-    "index\0on_treeWidget_doubleClicked\0"
+    "on_treeWidget_doubleClicked\0index\0"
     "on_treeWidget_itemDoubleClicked\0"
     "on_treeWidget_clicked\0"
-    "on_commandLinkButton_clicked"
+    "on_commandLinkButton_clicked\0"
+    "on_listWidget_2_doubleClicked\0"
+    "on_listWidget_doubleClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -80,23 +79,23 @@ static const uint qt_meta_data_MainWindow[] = {
        7,    0,   70,    2, 0x08 /* Private */,
        8,    0,   71,    2, 0x08 /* Private */,
        9,    1,   72,    2, 0x08 /* Private */,
-      11,    1,   75,    2, 0x08 /* Private */,
-      13,    1,   78,    2, 0x08 /* Private */,
-      14,    2,   81,    2, 0x08 /* Private */,
-      15,    1,   86,    2, 0x08 /* Private */,
-      16,    0,   89,    2, 0x08 /* Private */,
+      11,    2,   75,    2, 0x08 /* Private */,
+      12,    1,   80,    2, 0x08 /* Private */,
+      13,    0,   83,    2, 0x08 /* Private */,
+      14,    1,   84,    2, 0x08 /* Private */,
+      15,    1,   87,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    5,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 10,    4,
-    QMetaType::Void, QMetaType::QModelIndex,   12,
-    QMetaType::Void, QMetaType::QModelIndex,   12,
+    QMetaType::Void, QMetaType::QModelIndex,   10,
     QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    5,
-    QMetaType::Void, QMetaType::QModelIndex,   12,
+    QMetaType::Void, QMetaType::QModelIndex,   10,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QModelIndex,   10,
+    QMetaType::Void, QMetaType::QModelIndex,   10,
 
        0        // eod
 };
@@ -110,12 +109,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_pushButton_clicked(); break;
         case 2: _t->on_actionNueva_Carpeta_triggered(); break;
         case 3: _t->on_actionNuevo_Archivo_triggered(); break;
-        //case 4: _t->on_listWidget_2_itemDoubleClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 5: _t->on_listWidget_2_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 6: _t->on_treeWidget_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 7: _t->on_treeWidget_itemDoubleClicked((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 8: _t->on_treeWidget_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 9: _t->on_commandLinkButton_clicked(); break;
+        case 4: _t->on_treeWidget_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 5: _t->on_treeWidget_itemDoubleClicked((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 6: _t->on_treeWidget_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 7: _t->on_commandLinkButton_clicked(); break;
+        case 8: _t->on_listWidget_2_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 9: _t->on_listWidget_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }

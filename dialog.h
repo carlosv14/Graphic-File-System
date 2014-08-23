@@ -14,6 +14,7 @@ class Dialog : public QDialog
 public:
     explicit Dialog(QWidget *parent = 0);
     QString carpeta;
+    QString ext = ".txt";
     ~Dialog();
 
 private slots:

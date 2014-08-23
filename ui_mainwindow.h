@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -39,6 +40,8 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *page;
     QListWidget *listWidget;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
     QWidget *page_2;
     QListWidget *listWidget_2;
     QPushButton *pushButton;
@@ -78,7 +81,16 @@ public:
         listWidget = new QListWidget(page);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(0, 0, 391, 361));
+        listWidget->setLayoutMode(QListView::SinglePass);
         listWidget->setViewMode(QListView::ListMode);
+        gridLayoutWidget = new QWidget(page);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(-1, -1, 391, 361));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -121,7 +133,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

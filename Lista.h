@@ -41,6 +41,11 @@ Lista<T>::~Lista()
 {
     //dtor
 }
+template<class T>
+T Lista<T>::recupera(Nodo<T>* posicion)
+{
+    return posicion->valor;
+}
 
 template<class T>
 T Lista<T>::buscar(int pos){
@@ -117,7 +122,6 @@ Nodo<T>* Lista<T>::primero()
 {
     return inicio;
 }
-
 
 
 

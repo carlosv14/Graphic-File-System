@@ -42,10 +42,6 @@ private slots:
 
   void on_actionNuevo_Archivo_triggered();
 
-  void on_listWidget_2_itemDoubleClicked(QListWidgetItem *item);
-
-  void on_listWidget_2_doubleClicked(const QModelIndex &index);
-
   void on_treeWidget_doubleClicked(const QModelIndex &index);
 
   void on_treeWidget_itemDoubleClicked(QTreeWidgetItem *item, int column);
@@ -53,6 +49,11 @@ private slots:
   void on_treeWidget_clicked(const QModelIndex &index);
 
   void on_commandLinkButton_clicked();
+
+  void on_listWidget_2_doubleClicked(const QModelIndex &index);
+
+
+  void on_listWidget_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

@@ -56,7 +56,7 @@ public:
     {
         Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", 0));
         label->setText(QApplication::translate("Dialog", "Ingrese Nombre a Carpeta: ", 0));
-        lineEdit->setText(QApplication::translate("Dialog", "Mi Nueva Carpeta", 0));
+        lineEdit->setText(QApplication::translate("Dialog", "Untitled", 0));
     } // retranslateUi
 
 };

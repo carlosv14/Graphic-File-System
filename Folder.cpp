@@ -10,7 +10,6 @@ Folder::Folder(QString nom,QString path){
    this->tipo = "F";
     this->tamano = 1;
     this->path = path;
-
   }
 
 Folder::~Folder(){
