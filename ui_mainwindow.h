@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCommandLinkButton>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -35,13 +34,14 @@ class Ui_MainWindow
 public:
     QAction *actionNueva_Carpeta;
     QAction *actionNuevo_Archivo;
+    QAction *actionCopy;
+    QAction *actionPaste;
+    QAction *actionCut;
     QWidget *centralWidget;
     QTreeWidget *treeWidget;
     QStackedWidget *stackedWidget;
     QWidget *page;
     QListWidget *listWidget;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
     QWidget *page_2;
     QListWidget *listWidget_2;
     QPushButton *pushButton;
@@ -49,6 +49,7 @@ public:
     QCommandLinkButton *commandLinkButton;
     QMenuBar *menuBar;
     QMenu *menuInicio;
+    QMenu *menuEdit;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -64,6 +65,12 @@ public:
         actionNueva_Carpeta->setObjectName(QStringLiteral("actionNueva_Carpeta"));
         actionNuevo_Archivo = new QAction(MainWindow);
         actionNuevo_Archivo->setObjectName(QStringLiteral("actionNuevo_Archivo"));
+        actionCopy = new QAction(MainWindow);
+        actionCopy->setObjectName(QStringLiteral("actionCopy"));
+        actionPaste = new QAction(MainWindow);
+        actionPaste->setObjectName(QStringLiteral("actionPaste"));
+        actionCut = new QAction(MainWindow);
+        actionCut->setObjectName(QStringLiteral("actionCut"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         treeWidget = new QTreeWidget(centralWidget);
@@ -83,14 +90,6 @@ public:
         listWidget->setGeometry(QRect(0, 0, 391, 361));
         listWidget->setLayoutMode(QListView::SinglePass);
         listWidget->setViewMode(QListView::ListMode);
-        gridLayoutWidget = new QWidget(page);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(-1, -1, 391, 361));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -119,6 +118,8 @@ public:
         menuBar->setGeometry(QRect(0, 0, 653, 21));
         menuInicio = new QMenu(menuBar);
         menuInicio->setObjectName(QStringLiteral("menuInicio"));
+        menuEdit = new QMenu(menuBar);
+        menuEdit->setObjectName(QStringLiteral("menuEdit"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -128,12 +129,16 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuInicio->menuAction());
+        menuBar->addAction(menuEdit->menuAction());
         menuInicio->addAction(actionNueva_Carpeta);
         menuInicio->addAction(actionNuevo_Archivo);
+        menuEdit->addAction(actionCopy);
+        menuEdit->addAction(actionPaste);
+        menuEdit->addAction(actionCut);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -144,9 +149,13 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionNueva_Carpeta->setText(QApplication::translate("MainWindow", "Nueva Carpeta", 0));
         actionNuevo_Archivo->setText(QApplication::translate("MainWindow", "Nuevo Archivo", 0));
+        actionCopy->setText(QApplication::translate("MainWindow", "Copy", 0));
+        actionPaste->setText(QApplication::translate("MainWindow", "Paste", 0));
+        actionCut->setText(QApplication::translate("MainWindow", "Cut", 0));
         pushButton->setText(QString());
         commandLinkButton->setText(QString());
         menuInicio->setTitle(QApplication::translate("MainWindow", "Inicio", 0));
+        menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0));
     } // retranslateUi
 
 };

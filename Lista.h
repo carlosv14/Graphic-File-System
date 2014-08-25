@@ -22,8 +22,8 @@ class Lista
         Nodo<T>* siguiente(Nodo<T>* posicion);
         Nodo<T>* anterior(Nodo<T>* posicion);
         Nodo<T>* primero();
-
-
+        void borrarTodo();
+        void eliminar(int pos);
 
     protected:
     private:
@@ -46,15 +46,38 @@ T Lista<T>::recupera(Nodo<T>* posicion)
 {
     return posicion->valor;
 }
+template<class T>
+void Lista<T>::borrarTodo(){
+    inicio->siguiente =NULL;
+    this->size=0;
+}
 
 template<class T>
 T Lista<T>::buscar(int pos){
     if(pos<0 || pos>=this->size)
-        return NULL;
+        return 0;
     Nodo<T>*tmp = inicio;
     for(int i=0; i<pos;i++)
             tmp = tmp->siguiente;
     return tmp->valor;
+}
+
+template<class T>
+void Lista<T>::eliminar(int pos){
+    if(pos<0 || pos>=this->size)
+        return;
+    Nodo<T>* tmp = inicio;
+    for(int i =0 ; i<pos-1; i++){
+        tmp = tmp->siguiente;
+    }
+    if(pos == 0){
+        inicio = inicio->siguiente;
+    }else if(pos == size-1){
+        tmp->siguiente = NULL;
+    }else{
+        tmp->siguiente = tmp->siguiente->siguiente;
+    }
+    size--;
 }
 
 template<class T>
